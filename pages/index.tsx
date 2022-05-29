@@ -35,14 +35,16 @@ class App extends React.Component<Props> {
     render() {
         return (
             <Layout title="Home | Next.js + TypeScript Example">
-                <h1>Hello Next.js 👋</h1>
+                <div className='w-screen h-screen'>
+                <h1 className='text-red-100'>Hello Next.js 👋</h1>
                 <p>
-                    <Link href="/about">
-                        <a>About</a>
+                    <Link href="/about" className='text-blue-500'>
+                        <a className='text-blue-500'>About</a>
                     </Link>
                 </p>
                 <div>
                     The current tick state: {this.props.tick.message}
+                </div>
                 </div>
             </Layout>
         );

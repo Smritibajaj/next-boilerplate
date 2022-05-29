@@ -2,12 +2,13 @@
 import React from 'react'
 import App from 'next/app';
 import wrapper from "../store";
+import '../styles/globals.css'
 
 // For default you don't need to edit _app.tsx, but if you want to wrapper the pages with redux wrapper, you need
 // to override _app.tsx with this code bellow
 class MyApp extends App {
-    // @ts-ignore
-    static async getInitialProps({Component, ctx}) {
+    // // @ts-ignore
+    static async getInitialProps({Component, ctx} : any) {
         return {
             pageProps: {
                 // Call page-level getInitialProps
@@ -24,5 +25,9 @@ class MyApp extends App {
     }
 
 }
+
+// export function App({ Component, pageProps }: any) {
+//     return <Component {...pageProps} />;
+//   }
 
 export default wrapper.withRedux(MyApp);
