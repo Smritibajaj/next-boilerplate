@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { connect } from "react-redux";
 import { IStoreState } from "../../interfaces";
 import { getTickState } from "../../selectors";
@@ -27,38 +26,14 @@ function Register() {
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-2 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
                   >
-                    <Image
-                      src={githubImg}
-                      alt="Picture of the author"
-                      // width={500} automatically provided
-                      // height={500} automatically provided
-                      // blurDataURL="data:..." automatically provided
-                      // placeholder="blur" // Optional blur-up while loading
-                    />
-                    {/* <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      src={require("assets/img/github.svg").default}
-                    /> */}
+                    <Image src={githubImg} alt="Picture of the author"></Image>
                     Github
                   </button>
                   <button
                     className="bg-white active:bg-blueGray-50 text-blueGray-700 font-normal px-4 py-2 rounded outline-none focus:outline-none mr-1 mb-1 uppercase shadow hover:shadow-md inline-flex items-center font-bold text-xs ease-linear transition-all duration-150"
                     type="button"
                   >
-                    <Image
-                      src={googleImg}
-                      alt="Picture of the author"
-                      // width={500} automatically provided
-                      // height={500} automatically provided
-                      // blurDataURL="data:..." automatically provided
-                      // placeholder="blur" // Optional blur-up while loading
-                    />
-                    {/* <img
-                      alt="..."
-                      className="w-5 mr-1"
-                      src={require("assets/img/google.svg").default}
-                    /> */}
+                    <Image src={googleImg} alt="Picture of the author" />
                     Google
                   </button>
                 </div>
@@ -149,14 +124,13 @@ function Register() {
   );
 }
 const mapStateToProps = (state: IStoreState): { tick: ITickState } => ({
-    tick: getTickState(state),
-  });
-  
-  export default connect(mapStateToProps, null)(Register);
-  
-  // As the wrapper is injected in _app.tsx, for every component(page) that will interact with Redux and Thunk
-  // you need to place this piece of code bellow, that will get the static props from the wrapper, and inject on your
-  // component
-  //@ts-ignore
-  export const getStaticProps = wrapper.getStaticProps(({}) => {});
-  
+  tick: getTickState(state),
+});
+
+export default connect(mapStateToProps, null)(Register);
+
+// As the wrapper is injected in _app.tsx, for every component(page) that will interact with Redux and Thunk
+// you need to place this piece of code bellow, that will get the static props from the wrapper, and inject on your
+// component
+//@ts-ignore
+export const getStaticProps = wrapper.getStaticProps(({}) => {});
