@@ -7,7 +7,7 @@ import {composeWithDevTools} from "@redux-devtools/extension";
 import {updateTick} from "../actions";
 
 // Instantiating ThunkMiddleware object with the StoreState interface and AnyAction from Redux
-const thunkMiddleware = thunk.withExtraArgument({}) as ThunkMiddleware<IStoreState, AnyAction>;
+const thunkMiddleware = thunk.withExtraArgument({});
 
 // create a makeStore function
 // @ts-ignore
